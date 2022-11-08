@@ -14,15 +14,12 @@
 
 ## 📑 About the Project
 
-<p align="justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p align="justify">You don't have time to go to the workshop or you just simply don't know what's the problem that occured on your vehicle? Well it can be happen to anyone and this is where BengCall is come. BengCall is builded to make you hustle free from maintainig your two-wheels vehicle with fast, reliable, and great service </p>
 
 ## 📓 Testing Documentation
 [Test Case For WebUI](https://docs.google.com/spreadsheets/d/1O6KXBNgfuOaJJmRbachmq_b3TQBppHi5DMILPnsZIZk/edit?pli=1#gid=1278518793)
 
 ## 📝 Reports
-
-## 🛠 Tools
-
 <!--
 #### Login
 ![report-api-login](https://user-images.githubusercontent.com/68207916/186056420-bf4e443d-2e33-45e8-a07c-ac6757ceb643.png)
