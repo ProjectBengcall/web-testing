@@ -6,7 +6,7 @@
   <p align="center">
     Capstone Program Immersive Alterra Academy
     <br />
-    <a href="https://www.figma.com/file/FS9o3dSTRtTSmgwB834nbk/Bengcall-Design?node-id=1%3A144"><strong>| Figma Bengcall Design |</strong></a>
+    <a href="https://www.figma.com/file/FS9o3dSTRtTSmgwB834nbk/Bengcall-Design?node-id=1%3A144"><strong>| Figma User Interface Design |</strong></a>
     <br />
     <br />
   </p>
