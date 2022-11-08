@@ -6,7 +6,7 @@
   <p align="center">
     Capstone Program Immersive Alterra Academy
     <br />
-    <a href="https://app.swaggerhub.com/apis-docs/9tw/Bengcall/1.0.0#/"><strong>| Open API Documentation |</strong></a>
+    <a href="https://www.figma.com/file/FS9o3dSTRtTSmgwB834nbk/Bengcall-Design?node-id=1%3A144"><strong>| Figma Bencall Design |</strong></a>
     <br />
     <br />
   </p>
