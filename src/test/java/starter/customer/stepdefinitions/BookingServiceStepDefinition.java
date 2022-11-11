@@ -5,20 +5,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import starter.customer.ExpectedCustomerResponses;
 import starter.customer.base.BasePageObject;
-import starter.customer.pages.HomePage;
 import starter.customer.step.BookingServiceStep;
 import starter.customer.step.LoginStep;
 import static org.junit.Assert.*;
 
 public class BookingServiceStepDefinition extends BasePageObject {
-    HomePage home;
     LoginStep loginStep;
     BookingServiceStep bookingServiceStep;
     @Given("User already on home page")
     public void user_already_on_home_page() {
-//        loginStep.fullLogin();
-        home.open();
-
+        loginStep.fullLogin();
     }
     @When("User click on Service Now button")
     public void user_click_on_service_now_button() {
@@ -56,9 +52,9 @@ public class BookingServiceStepDefinition extends BasePageObject {
     public void user_select_on_vehicle_type(String vehicle) {
         bookingServiceStep.selectVehicleType(vehicle);
     }
-    @When("User select {string}  on service type field")
-    public void user_select_on_service_type_field(String service) {
-        bookingServiceStep.selectServiceType(service);
+    @When("User select first service {string} on service type field")
+    public void user_select_first_service_on_service_type_field(String service) {
+        bookingServiceStep.selectFirstServiceType(service);
     }
     @When("User input {string} on other request field")
     public void user_input_on_other_request_field(String request) {
@@ -75,5 +71,21 @@ public class BookingServiceStepDefinition extends BasePageObject {
     @Then("There is dot on service icon")
     public void there_is_dot_on_service_icon() {
 
+    }
+    @When("User select second service {string} on service type field")
+    public void user_select_second_service_on_service_type_field(String service2) {
+
+    }
+    @When("User select third service {string} on service type field")
+    public void user_select_third_service_on_service_type_field(String service3) {
+
+    }
+    @When("User select fourth service {string} on service type field")
+    public void user_select_fourth_service_on_service_type_field(String service4) {
+
+    }
+
+    @Then("Drop down will still appear after enter")
+    public void drop_down_will_still_appear_after_enter() {
     }
 }

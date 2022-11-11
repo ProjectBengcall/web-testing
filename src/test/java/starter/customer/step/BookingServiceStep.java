@@ -37,7 +37,25 @@ public class BookingServiceStep extends BasePageObject {
         enter(vehicleSelect);
     }
     @Step
-    public void selectServiceType(String service){
+    public void selectFirstServiceType(String service){
+        final By serviceSelect = By.id("react-select-4-input");
+        inputText(serviceSelect, service);
+        enter(serviceSelect);
+    }
+    @Step
+    public void selectSecondServiceType(String service){
+        final By serviceSelect = By.id("react-select-4-input");
+        inputText(serviceSelect, service);
+        enter(serviceSelect);
+    }
+    @Step
+    public void selectThirdServiceType(String service){
+        final By serviceSelect = By.id("react-select-4-input");
+        inputText(serviceSelect, service);
+        enter(serviceSelect);
+    }
+    @Step
+    public void selectFourthServiceType(String service){
         final By serviceSelect = By.id("react-select-4-input");
         inputText(serviceSelect, service);
         enter(serviceSelect);

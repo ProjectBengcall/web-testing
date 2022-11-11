@@ -21,5 +21,13 @@ public class LoginStep extends BasePageObject {
         registerStep.inputEmail(DataInput.email);
         registerStep.inputPassword(DataInput.password);
         clickSignIn();
+        clickAcceptAlert();
+    }
+    @Step
+    public void clickLogout(){
+        final By userDropDown = By.xpath("//*[@id=\"navbar-user\"]/div/div[3]/div");
+        final By logOutBtn = By.xpath("//*[@id=\"navbar-user\"]/div/div[3]/div/ul/li[3]");
+        click(userDropDown);
+        click(logOutBtn);
     }
 }
