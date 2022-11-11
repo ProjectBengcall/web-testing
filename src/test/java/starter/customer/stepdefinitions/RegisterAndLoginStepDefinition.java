@@ -18,7 +18,6 @@ public class RegisterAndLoginStepDefinition extends BasePageObject {
     RegisterStep registerStep;
     LoginStep loginStep;
 
-    // REGISTER
     @Given("User is already on the login page")
     public void user_is_already_on_the_login_page() {
         login.open();
@@ -28,9 +27,8 @@ public class RegisterAndLoginStepDefinition extends BasePageObject {
         registerStep.clickSignUpNow();
     }
     @When("User is directed to register page")
-    public void user_is_directed_to_register_page() {
-        String url = "https://bengcall.vercel.app/register";
-        assertEquals(url, getUrl());
+    public void user_is_directed_to_register_page() {;
+        assertEquals(ExpectedCustomerResponses.REGISTER_URL, getUrl());
     }
     @When("User input on Full Name field with {string}")
     public void user_input_on_full_name_field_with(String name) {
@@ -46,15 +44,17 @@ public class RegisterAndLoginStepDefinition extends BasePageObject {
     }
     @When("User click on sign up button")
     public void user_click_on_sign_up_button() {
-
+        registerStep.clickSignUpButton();
     }
-    @Then("User will get {string} message")
-    public void userWillGetMessage(String message) {
+    @Then("User will get {string} alert message")
+    public void userWillGetAlertMessage(String message) {
+        assertEquals(message, getAlertText());
+        clickAcceptAlert();
     }
-    @And("User will directed to login page")
-    public void userWillDirectedToLoginPage() {
+    @And("User will be directed to login page")
+    public void userWillBeDirectedToLoginPage() {
+        assertEquals(ExpectedCustomerResponses.BASE_URL, getUrl());
     }
-    // LOGIN
     @And("User click on sign in button")
     public void userClickOnSignInButton() {
         loginStep.clickSignIn();
@@ -63,5 +63,23 @@ public class RegisterAndLoginStepDefinition extends BasePageObject {
     public void user_will_be_directed_to_home_page() {
         assertEquals(ExpectedCustomerResponses.HOME_URL, getUrl());
         assertNotNull(home.getServiceNowText());
+    }
+
+    @Given("User is already on home page")
+    public void userIsAlreadyOnHomePage() {
+        loginStep.fullLogin();
+    }
+    @When("User click on Logout")
+    public void userClickOnLogout() {
+        loginStep.clickLogout();
+    }
+
+    @Then("User click on back button")
+    public void userClickOnBackButton() {
+        clickBackButton();
+    }
+    @Then("User should not back to login page")
+    public void userShouldNotBackToLoginPage() {
+        assertNull(login.getSignInButtonText());
     }
 }

@@ -8,10 +8,6 @@ import starter.customer.pages.LoginPage;
 public class RegisterStep extends BasePageObject {
     LoginPage login;
     @Step
-    public void openLoginPage(){
-        login.open();
-    }
-    @Step
     public void clickSignUpNow(){
         final By signupNow = By.id("register");
         click(signupNow);
@@ -30,5 +26,10 @@ public class RegisterStep extends BasePageObject {
     public void inputPassword(String password){
         final By passwordField = By.id("password");
         inputText(passwordField, password);
+    }
+    @Step
+    public void clickSignUpButton(){
+        final By signUp = By.id("button-submit");
+        click(signUp);
     }
 }
