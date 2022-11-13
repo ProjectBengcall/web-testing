@@ -21,7 +21,8 @@ public class LoginStep extends BasePageObject {
         registerStep.inputEmail(DataInput.email);
         registerStep.inputPassword(DataInput.password);
         clickSignIn();
-        clickAcceptAlert();
+        clickAcceptAlert(); // DELETE IF HAS BEEN FIXED
+        clickOkConfirmation();
     }
     @Step
     public void clickLogout(){

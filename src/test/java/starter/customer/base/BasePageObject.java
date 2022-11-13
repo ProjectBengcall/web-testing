@@ -71,4 +71,13 @@ public class BasePageObject extends PageObject {
     public void clickBackButton(){
         driver.navigate().back();
     }
+    public void wait(By by){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+    public void clickOkConfirmation(){
+        final By okConfirmation = By.className("swal-button-container");
+        wait(okConfirmation);
+        click(okConfirmation);
+    }
 }

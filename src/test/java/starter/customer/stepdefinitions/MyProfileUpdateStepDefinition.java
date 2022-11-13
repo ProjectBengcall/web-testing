@@ -16,7 +16,7 @@ public class MyProfileUpdateStepDefinition extends BasePageObject {
     String tempEmail = "test";
     @Given("User already on my profile page")
     public void user_already_on_my_profile_page() {
-        myProfileStep.goToMyProfile();
+        myProfileStep.goToMyProfileFull();
         assertEquals(ExpectedCustomerResponses.MY_PROFILE_PAGE, getUrl());
         tempName = myProfile.verifyUpdatedName();
         tempEmail = myProfile.verifyUpdatedEmail();
@@ -45,7 +45,6 @@ public class MyProfileUpdateStepDefinition extends BasePageObject {
     public void user_will_see_new_email_as(String email) {
         assertEquals(email, myProfile.verifyUpdatedEmail());
     }
-
     @Then("Email will not change")
     public void emailWillNotChange() {
         assertEquals(tempEmail, myProfile.verifyUpdatedEmail());
@@ -61,9 +60,13 @@ public class MyProfileUpdateStepDefinition extends BasePageObject {
         myProfileStep.inputUpdateEmail(DataInput.email);
         myProfileStep.inputUpdatePassword(DataInput.password);
         myProfileStep.clickUpdateButton();
+        clickOkConfirmation();
     }
-
     @When("User click on the deactivate button")
     public void userClickOnTheDeactivateButton() {
+    }
+    @Then("Home")
+    public void home() {
+        myProfileStep.clickLogo();
     }
 }
