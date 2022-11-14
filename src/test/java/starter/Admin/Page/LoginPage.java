@@ -17,8 +17,14 @@ public class LoginPage extends PageObject {
     private final By fieldPassword = By.id("password");
     private final By signinButton = By.id("button-submit");
 
+    private final By logOutButton = By.id("btn-logout");
+    private final By NotifBanner = By.className("swal-text");
+    private final By ClickNotifBanner = By.xpath("/html/body/div[2]/div/div[2]/div/button");
 
 
+    public String getNotificationTitle(){
+        return driver.findElement(NotifBanner).getText();
+    }
     public void InputEmail(String Email){
         driver.findElement(fieldEmail).sendKeys(Email);
     }
@@ -31,8 +37,13 @@ public class LoginPage extends PageObject {
         driver.findElement(signinButton).click();
     }
 
-    public String getUrl(){ return driver.getCurrentUrl();
+    public String getUrl(){
+        return driver.getCurrentUrl();}
+
+    public void clickLogOutButton(){
+        driver.findElement(logOutButton).click();
     }
 
+    public void NotifBanner () { driver.findElement(ClickNotifBanner).click();}
 
 }
