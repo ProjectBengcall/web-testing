@@ -7,8 +7,8 @@ Feature: Dashboard Page
     And Click detail button
     And Input text in add service type "<servicetype>"
     And Input price in add price "<price>"
-#    And Click detail submit button
-#    Then Redirect to dashboard page
+    And Click detail submit button
+    Then Redirect to dashboard page
 
     Examples:
     | servicetype      | price    |
@@ -23,7 +23,7 @@ Feature: Dashboard Page
     When Click detail button
     And Input text in add service type "<servicetype>"
     And Input price in add price "<price>"
-#    And Click detail submit button
+    And Click detail submit button
     Then Can't redirect to dashboard page
 
     Examples:
