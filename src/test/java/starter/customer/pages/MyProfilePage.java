@@ -1,7 +1,10 @@
 package starter.customer.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import starter.customer.base.BasePageObject;
+
+import java.time.Duration;
 
 public class MyProfilePage extends BasePageObject {
     public String verifyUpdatedName(){

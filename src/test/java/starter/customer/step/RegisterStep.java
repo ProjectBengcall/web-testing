@@ -6,7 +6,6 @@ import starter.customer.base.BasePageObject;
 import starter.customer.pages.LoginPage;
 
 public class RegisterStep extends BasePageObject {
-    LoginPage login;
     @Step
     public void clickSignUpNow(){
         final By signupNow = By.id("register");

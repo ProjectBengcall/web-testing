@@ -4,16 +4,19 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import starter.customer.ExpectedCustomerResponses;
 import starter.customer.base.BasePageObject;
 import starter.customer.pages.HomePage;
 import starter.customer.pages.LoginPage;
+import starter.customer.pages.RegisterPage;
 import starter.customer.step.LoginStep;
 import starter.customer.step.RegisterStep;
 import static org.junit.Assert.*;
 
 public class RegisterAndLoginStepDefinition extends BasePageObject {
     LoginPage login;
+    RegisterPage register;
     HomePage home;
     RegisterStep registerStep;
     LoginStep loginStep;
@@ -81,5 +84,16 @@ public class RegisterAndLoginStepDefinition extends BasePageObject {
     @Then("User should not back to login page")
     public void userShouldNotBackToLoginPage() {
         assertNull(login.getSignInButtonText());
+    }
+
+    @Then("User will get {string} alert modal message")
+    public void userWillGetAlertModalMessage(String message) {
+        assertEquals(message, getModalAlert());
+        clickOkConfirmation();
+    }
+
+    @Then("Error Alert")
+    public void error_alert() {
+        clickAcceptAlert();
     }
 }

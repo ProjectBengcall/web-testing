@@ -8,7 +8,7 @@ public class MyProfileUpdateStep extends BasePageObject {
     LoginStep loginStep;
 
     @Step
-    public void goToMyProfile(){
+    public void goToMyProfileFull(){
         final By userIcon = By.xpath("//*[@id=\"navbar-user\"]/div/div[3]/div/label");
         final By myProfileMenu = By.xpath("//*[@id=\"navbar-user\"]/div/div[3]/div/ul/li[1]");
         loginStep.fullLogin();
@@ -45,5 +45,10 @@ public class MyProfileUpdateStep extends BasePageObject {
     @Step
     public void clickDeactivate() {
         final By deactivateButton = By.id("deactivate");
+    }
+    @Step
+    public void clickLogo(){
+        final By homeButton = By.id("btn-home");
+        click(homeButton);
     }
 }
