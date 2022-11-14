@@ -88,9 +88,5 @@ By default, the tests will run using Chrome. You can run them in Firefox by over
 ```json
 $ mvn clean verify -Ddriver=firefox
 ```
-Or
-```json
-$ gradle clean test -Pdriver=firefox
-```
 
 The test results will be recorded in the `target/site/serenity` directory.
