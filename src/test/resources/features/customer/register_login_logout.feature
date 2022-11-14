@@ -2,7 +2,7 @@ Feature: Register and login for the app
   Background:
   User is going to use the service.
   So they have to register first and then login.
-
+    @demo
     Scenario: Register with valid requirement
       Given User is already on the login page
       When User click on SignUp Now! button
@@ -22,14 +22,14 @@ Feature: Register and login for the app
       And User input on Email field with "test-test@mail.com"
       And User input on Password field with "testpass1"
       And User click on sign up button
-      #Then User will get "Password should contain atleast 8 characters & containing letters and atleast 1 number" alert modal message
+      Then User will get "Account already exist" alert modal message
 
     Scenario: Register with invalid password requirement
       Given User is already on the login page
       When User click on SignUp Now! button
       And User is directed to register page
       And User input on Full Name field with "test"
-      And User input on Email field with "test@mail.com"
+      And User input on Email field with "testing@mail.com"
       And User input on Password field with "testpass"
       And User click on sign up button
       Then User will get "Password should contain atleast 8 characters & containing letters and atleast 1 number" alert modal message
@@ -39,7 +39,7 @@ Feature: Register and login for the app
       When User click on SignUp Now! button
       And User is directed to register page
       And User input on Full Name field with "te"
-      And User input on Email field with "test@mail.com"
+      And User input on Email field with "testing@mail.com"
       And User input on Password field with "testpass"
       And User click on sign up button
       Then User will get "Full Name should atleast be 3 letters" alert modal message
@@ -60,14 +60,16 @@ Feature: Register and login for the app
       |         |test@mail.com|testpass1        |
       |         |             |                 |
 
+    @demo
     Scenario: Login with valid credentials
       Given User is already on the login page
       When User input on Email field with "test-test@mail.com"
       And User input on Password field with "testpass1"
       And User click on sign in button
-      Then User will be directed to Home Page
       Then User will get "You're logged in" alert modal message
+      Then User will be directed to Home Page
 
+    @demo
     Scenario Outline: Login with invalid credentials
       Given User is already on the login page
       When User input on Email field with "<email>"
@@ -80,6 +82,7 @@ Feature: Register and login for the app
       |test-test@mail.com     |unregisteredpass1  |
       |unregistered@mail.com  |unregisteredpass1  |
 
+    @demo
     Scenario Outline: Login with email field is emptied
       Given User is already on the login page
       When User input on Email field with "<email>"
@@ -91,6 +94,7 @@ Feature: Register and login for the app
       |                  |testpass1 |
       |                  |          |
 
+    @demo
     Scenario: Login with password field is emptied
       Given User is already on the login page
       When User input on Email field with "test-test@mail.com"
@@ -102,6 +106,7 @@ Feature: Register and login for the app
       When User click on Logout
       Then User will be directed to login page
       Then User will get "You have been logged out" alert modal message
+
 
 #    Scenario: Back button should not bring user to login page
 #      Given User is already on the login page

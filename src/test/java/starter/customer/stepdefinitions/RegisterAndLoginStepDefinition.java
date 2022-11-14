@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import starter.customer.ExpectedCustomerResponses;
 import starter.customer.base.BasePageObject;
 import starter.customer.pages.HomePage;
@@ -60,7 +61,6 @@ public class RegisterAndLoginStepDefinition extends BasePageObject {
     @And("User click on sign in button")
     public void userClickOnSignInButton() {
         loginStep.clickSignIn();
-        clickAcceptAlert(); // DELETE IF HAS BEEN FIXED
     }
     @Then("User will be directed to Home Page")
     public void user_will_be_directed_to_home_page() {
@@ -88,7 +88,8 @@ public class RegisterAndLoginStepDefinition extends BasePageObject {
 
     @Then("User will get {string} alert modal message")
     public void userWillGetAlertModalMessage(String message) {
-        assertEquals(message, register.getModalAlert());
+        assertEquals(message, getModalAlert());
+        clickOkConfirmation();
     }
 
     @Then("Error Alert")

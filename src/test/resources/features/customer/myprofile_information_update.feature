@@ -12,14 +12,13 @@ Feature: Update my profile information
       And User input "<email>" on input new email field
       And User input "<password>" on input new password
       And User click on submit button
-      Then User will see notification update successfully
+      Then User will get "Success Change Profile" alert modal message
       And User will see new name as "<name>"
       And User will see new email as "<email>"
-      And User will get "Success Change Profile" alert modal message
 
       Examples:
         |name       |email              |password       |
-        |Test Update|testupdate@mail.com|testpassupdate1|
+        |Test Update|testupdate1@mail.com|testpassupdate1|
 
     Scenario Outline: Login with updated profile
       Given User is already on the login page
@@ -35,7 +34,7 @@ Feature: Update my profile information
 
       Examples:
         |email              |password       |
-        |testupdate@mail.com|testpassupdate1|
+        |testupdate1@mail.com|testpassupdate1|
 
     Scenario: Update name should change name only
       Given User already on my profile page
@@ -59,8 +58,8 @@ Feature: Update my profile information
       * Home
       # RESET TO BASE
 
-    Scenario: Deactivate button should delete user account
-      Given User already on my profile page
-      When User click on the deactivate button
-      Then User will get "Account Deleted" alert message
-      Then User will be directed to login page
+#    Scenario: Deactivate button should delete user account
+#      Given User already on my profile page
+#      When User click on the deactivate button
+#      Then User will get "Account Deleted" alert message
+#      Then User will be directed to login page

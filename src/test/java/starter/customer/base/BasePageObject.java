@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BasePageObject extends PageObject {
     WebDriver driver = getDriver();
@@ -28,7 +29,6 @@ public class BasePageObject extends PageObject {
         singleElement(by).click();
     }
     public void inputText(By by, String string){
-        singleElement(by).clear();
         singleElement(by).sendKeys(string);
     }
     public void inputNumber(By by, int number){
@@ -71,13 +71,26 @@ public class BasePageObject extends PageObject {
     public void clickBackButton(){
         driver.navigate().back();
     }
-    public void wait(By by){
+    public void waitElementAppear(By by){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
+    public void waitImplicit(){
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+    public void waitOkButtonModalAlertClickable(){
+        final By okButton = By.xpath("/html/body/div[2]/div/div[2]/div");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(okButton));
+    }
     public void clickOkConfirmation(){
+        waitOkButtonModalAlertClickable();
         final By okConfirmation = By.className("swal-button-container");
-        wait(okConfirmation);
         click(okConfirmation);
+    }
+    public String getModalAlert(){
+        waitOkButtonModalAlertClickable();
+        final By modalText = By.className("swal-text");
+        return getText(modalText);
     }
 }

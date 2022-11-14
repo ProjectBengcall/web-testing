@@ -19,7 +19,6 @@ public class MyProfileUpdateStep extends BasePageObject {
     public void toMyProfile(){
         final By userIcon = By.xpath("//*[@id=\"navbar-user\"]/div/div[3]/div/label");
         final By myProfileMenu = By.xpath("//*[@id=\"navbar-user\"]/div/div[3]/div/ul/li[1]");
-        clickOkConfirmation();
         click(userIcon);
         click(myProfileMenu);
     }

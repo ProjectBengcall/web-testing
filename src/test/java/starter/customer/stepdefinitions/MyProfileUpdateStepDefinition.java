@@ -33,10 +33,6 @@ public class MyProfileUpdateStepDefinition extends BasePageObject {
     public void user_input_on_input_new_password(String passwordUpdate) {
         myProfileStep.inputUpdatePassword(passwordUpdate);
     }
-    @Then("User will see notification update successfully")
-    public void user_will_see_notification_update_successfully() {
-
-    }
     @Then("User will see new name as {string}")
     public void user_will_see_new_name_as(String name) {
         assertEquals(name, myProfile.verifyUpdatedName());
