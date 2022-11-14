@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import starter.Admin.Page.DashboardPage;
 import starter.Admin.Page.LoginPage;
 
 import static org.junit.Assert.assertEquals;
@@ -14,6 +15,7 @@ import static org.junit.Assert.assertTrue;
 public class LoginStepDef {
 
     LoginPage loginPage;
+    DashboardPage dashboardPage;
 
     @Given("user already on page")
     public void userAlreadyOnPage() {
@@ -37,7 +39,7 @@ public class LoginStepDef {
 
     @Then("User direct to dashboard page")
     public void userDirectToDashboardPage() {
-        assertEquals("https://bengcall.vercel.app/dashboard", loginPage.getUrl());
+        assertEquals("You're logged in",loginPage.getNotificationTitle());
     }
 
     @When("User input email {string}")
@@ -50,6 +52,10 @@ public class LoginStepDef {
         loginPage.InputPassword(Password);
     }
 
+    @And("Click button")
+    public void clickButton() {
+        loginPage.clickButton();
+    }
     @Then("User can't direct to dashboard page")
     public void userCanTDirectToDashboardPage() {
         assertEquals("https://bengcall.vercel.app/", loginPage.getUrl());
