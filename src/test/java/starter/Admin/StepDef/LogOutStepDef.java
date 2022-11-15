@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import starter.Admin.Page.DashboardPage;
 import starter.Admin.Page.LoginPage;
 
+import java.util.concurrent.TimeUnit;
+
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 import static org.junit.Assert.assertEquals;
 
@@ -22,7 +24,8 @@ public class LogOutStepDef {
         loginPage.InputEmail("admin@bengcall.com");
         loginPage.InputPassword("adminbengcall123");
         loginPage.clickButton();
-        dashboardPage.clickAcceptAlert();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        loginPage.NotifBanner();
     }
 
     @And("User click log out button")
