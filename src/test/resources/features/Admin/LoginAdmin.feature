@@ -8,7 +8,7 @@ Feature: Log in Admin
     And User click button
     Then User direct to dashboard page
 
-    #WBC_2
+  @demo #WBC_2
   Scenario Outline: Log in with invalid data
     Given user already on page
     When User input email "<email>"

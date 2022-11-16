@@ -40,9 +40,9 @@ public class BookingServiceStepDefinition extends BasePageObject {
     public void user_input_month_on_booking_date(Integer month) {
         bookingServiceStep.inputDate(month);
     }
-    @When("User input hour {int} on booking date")
-    public void user_input_hour_on_booking_date(Integer hour) {
-        bookingServiceStep.inputDate(hour);
+    @When("User input year {int} on booking date")
+    public void user_input_year_on_booking_date(Integer year) {
+        bookingServiceStep.inputDate(year);
     }
     @When("User input minute {int} on booking date")
     public void user_input_minute_on_booking_date(Integer minute) {

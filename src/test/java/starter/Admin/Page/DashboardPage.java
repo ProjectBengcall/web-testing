@@ -41,7 +41,8 @@ public class DashboardPage extends PageObject {
 
     public void AddPrice(String AddPrice) { driver.findElement(fieldAddPrice).sendKeys(AddPrice);}
 
-    public void ClickDetailSubmitButton() {driver.findElement(DetailSubmitButton).click();}
+    public void ClickDetailSubmitButton() {
+        driver.findElement(DetailSubmitButton).click();}
 
     public void clickAcceptAlert(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));

@@ -78,10 +78,13 @@ public class BasePageObject extends PageObject {
     public void waitImplicit(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
+    public void waitButtonClickAble(By by){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
     public void waitOkButtonModalAlertClickable(){
         final By okButton = By.xpath("/html/body/div[2]/div/div[2]/div");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(okButton));
+        waitButtonClickAble(okButton);
     }
     public void clickOkConfirmation(){
         waitOkButtonModalAlertClickable();
@@ -92,5 +95,9 @@ public class BasePageObject extends PageObject {
         waitOkButtonModalAlertClickable();
         final By modalText = By.className("swal-text");
         return getText(modalText);
+    }
+    public void waitSubmitBooking(){
+        final By submitButton = By.id("button-submit");
+        waitButtonClickAble(submitButton);
     }
 }
