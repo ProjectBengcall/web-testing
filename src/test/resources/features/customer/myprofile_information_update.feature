@@ -6,6 +6,7 @@ Feature: Update my profile information
     So they login again.
     If they want to delete their account, they have to deactivate it
 
+    @demo
     Scenario Outline: Update information on profile
       Given User already on my profile page
       When User input "<name>" on input new full name field
@@ -19,7 +20,7 @@ Feature: Update my profile information
       Examples:
         |name       |email              |password       |
         |Test Update|testupdate1@mail.com|testpassupdate1|
-
+    @demo
     Scenario Outline: Login with updated profile
       Given User is already on the login page
       When User input on Email field with "<email>"

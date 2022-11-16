@@ -3,7 +3,7 @@ Feature: Booking a Service
   User already have an account and want to book a service.
   They have to fill the form to get a service
 
-    @SanityTesting
+    @demo
     Scenario Outline: Book a service with all field is filled
       Given User already on home page
       When User click on Service Now button
@@ -12,9 +12,7 @@ Feature: Booking a Service
       And User input "<address>" on address field
       And User input month <month> on booking date
       And User input date <date> on booking date
-      And User input hour <hour> on booking date
-      And User input minute <minute> on booking date
-      And User input time "<time>" on booking date
+      And User input year <year> on booking date
       And User select "<location>" on service location field
       And User select "<vehicle>" on vehicle type
       And User select first service "<service1>" on service type field
@@ -23,47 +21,53 @@ Feature: Booking a Service
       Then User will get "Service Booked" alert modal message
 
       Examples:
-      |phone     |address                    |date|month|hour|minute|time|location    |vehicle      |service1         |other                |
-      |0816764095|Jalan Merdeka no 7 Surabaya|21  |11   |11  |30    |PM  |Home Service|150cc - Vario|Ganti Oli-35000  |Please check the lamp|
+      |phone     |address                    |date|month|year|location    |vehicle      |service1         |other                |
+      |0816764095|Jalan Merdeka no 7 Surabaya|21  |11   |2022|Home Service|150cc - Vario|Full Service     |Please check the lamp|
 
-#  Scenario Outline: Book a service with all required field is filled
-#    Given User already on home page
-#    When User click on Service Now button
-#    And Service Now form will be appeared
-#    And User input "<phone>" on phone field
-#    And User input "<address>" on address field
-#    And User input date <date> on booking date
-#    And User input month <month> on booking date
-#    And User input year <year> on booking date
-#    And User select "<location>" on service location field
-#    And User select "<vehicle>" on vehicle type
-#    And User select first service "<service1>" on service type field
-#    And User click on submit button
-#    Then Date service will be shown
-#    And There is dot on service icon
-#
-#    Examples:
-#      |phone     |address                    |date|month|year|location    |vehicle      |service1         |
-#      |0816764095|Jalan Merdeka no 7 Surabaya|21  |11   |2022|Home Service|150cc - Vario|Complete Service|
-#
-#  Scenario Outline: Book a service with an empty required field
-#    Given User already on home page
-#    When User click on Service Now button
-#    And Service Now form will be appeared
-#    And User input "<address>" on address field
-#    And User input date <date> on booking date
-#    And User input month <month> on booking date
-#    And User input year <year> on booking date
-#    And User select "<location>" on service location field
-#    And User select "<vehicle>" on vehicle type
-#    And User select first service "<service1>" on service type field
-#    And User click on submit button
-#    #Then User will get "all required field should not empty" message
-#
-#    Examples:
-#      |address                    |date|month|year|location    |vehicle      |service1         |
-#      |Jalan Merdeka no 7 Surabaya|21  |11   |2022|Home Service|150cc - Vario|Complete Service|
-#
+    Scenario Outline: Book a service with all mandatory field is filled
+      Given User already on home page
+      When User click on Service Now button
+      And Service Now form will be appeared
+      And User input "<phone>" on phone field
+      And User input "<address>" on address field
+      And User input month <month> on booking date
+      And User input date <date> on booking date
+      And User input year <year> on booking date
+      And User select "<location>" on service location field
+      And User select "<vehicle>" on vehicle type
+      And User select first service "<service1>" on service type field
+      And User click on submit button
+      Then User will get "Service Booked" alert modal message
+
+      Examples:
+        |phone     |address                    |date|month|year|location    |vehicle      |service1         |
+        |0816764095|Jalan Merdeka no 7 Surabaya|21  |11   |2022|Home Service|150cc - Vario|Ganti Oli-35000  |
+
+    Scenario Outline: Book a service with an empty required field
+      Given User already on home page
+      When User click on Service Now button
+      And Service Now form will be appeared
+      And User input "<phone>" on phone field
+      And User input "<address>" on address field
+      And User input month <month> on booking date
+      And User input date <date> on booking date
+      And User input year <year> on booking date
+      And User select "<location>" on service location field
+      And User select "<vehicle>" on vehicle type
+      And User select first service "<service1>" on service type field
+      And User click on submit button
+      Then User will get "failed to book" alert modal message
+
+      Examples:
+        |phone     |address                    |date|month|year|location    |vehicle      |service1         |
+        |          |Jalan Merdeka no 7 Surabaya|21  |11   |2022|Home Service|150cc - Vario|Ganti Oli-35000  |
+        |0816764095|                           |21  |11   |2022|Home Service|150cc - Vario|Ganti Oli-35000  |
+        |0816764095|Jalan Merdeka no 7 Surabaya|21  |11   |2022|Home Service|150cc - Vario|Ganti Oli-35000  |
+        |0816764095|Jalan Merdeka no 7 Surabaya|    |     |    |Home Service|150cc - Vario|Ganti Oli-35000  |
+        |0816764095|Jalan Merdeka no 7 Surabaya|21  |11   |2022|            |150cc - Vario|Ganti Oli-35000  |
+        |0816764095|Jalan Merdeka no 7 Surabaya|21  |11   |2022|Home Service|             |Ganti Oli-35000  |
+        |0816764095|Jalan Merdeka no 7 Surabaya|21  |11   |2022|Home Service|150cc - Vario|                 |
+
 #  Scenario Outline: Book a service with all service is selected
 #    Given User already on home page
 #    When User click on Service Now button

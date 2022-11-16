@@ -27,7 +27,7 @@ public class DashboardPage extends PageObject {
     private final By ButtonChangeStatus = By.id("btn-changeStatus");
 
 
-    public static String DASHBOARD_URL = "https://bengcall.vercel.app/detailadmin/105";
+    public static String DASHBOARD_URL = "https://bengcall.vercel.app/detailadmin/123";
 
     public void ChangeStatus() {
         driver.findElement(fieldChangeStatus).click();
@@ -41,7 +41,8 @@ public class DashboardPage extends PageObject {
 
     public void AddPrice(String AddPrice) { driver.findElement(fieldAddPrice).sendKeys(AddPrice);}
 
-    public void ClickDetailSubmitButton() {driver.findElement(DetailSubmitButton).click();}
+    public void ClickDetailSubmitButton() {
+        driver.findElement(DetailSubmitButton).click();}
 
     public void clickAcceptAlert(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));

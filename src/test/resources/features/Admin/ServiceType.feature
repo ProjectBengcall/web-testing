@@ -1,6 +1,6 @@
 Feature: Service Type flow
 
-  #WBC_6
+  @demo #WBC_6
   Scenario: Add Vehicle with valid vehicle type
     Given Already log in
     And Click service type button

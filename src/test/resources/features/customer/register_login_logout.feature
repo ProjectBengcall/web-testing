@@ -2,7 +2,7 @@ Feature: Register and login for the app
   Background:
   User is going to use the service.
   So they have to register first and then login.
-    @demo
+
     Scenario: Register with valid requirement
       Given User is already on the login page
       When User click on SignUp Now! button
@@ -14,6 +14,7 @@ Feature: Register and login for the app
       Then User will get "Success create new user" alert message
       And User will be directed to login page
 
+    @demo
     Scenario: Register with already registered email
       Given User is already on the login page
       When User click on SignUp Now! button
@@ -82,7 +83,7 @@ Feature: Register and login for the app
       |test-test@mail.com     |unregisteredpass1  |
       |unregistered@mail.com  |unregisteredpass1  |
 
-    @demo
+
     Scenario Outline: Login with email field is emptied
       Given User is already on the login page
       When User input on Email field with "<email>"
@@ -94,13 +95,13 @@ Feature: Register and login for the app
       |                  |testpass1 |
       |                  |          |
 
-    @demo
     Scenario: Login with password field is emptied
       Given User is already on the login page
       When User input on Email field with "test-test@mail.com"
       And User click on sign in button
       Then User will get "Password should not be empty" alert modal message
 
+    @demo
     Scenario: Logout button should redirect user to Login page
       Given User is already on home page
       When User click on Logout

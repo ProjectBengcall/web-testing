@@ -12,6 +12,7 @@ public class BookingServiceStep extends BasePageObject {
     }
     @Step
     public void inputPhone(String phone){
+        waitSubmitBooking();
         final By phoneField = By.id("input-phone");
         inputText(phoneField, phone);
     }
