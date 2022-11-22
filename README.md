@@ -14,7 +14,7 @@
 
 ## 📑 About the Project
 
-<p align="justify">You don't have time to go to the workshop or you just simply don't know what's the problem that occured on your vehicle? Well it can be happen to anyone and this is where BengCall is come. BengCall is builded to make you hustle free from maintainig your two-wheels vehicle with fast, reliable, and great service </p>
+<p align="justify">You don't have time to go to the workshop or you just simply don't know what's the problem that occured on your vehicle? Well it can be happen to anyone and this is where BengCall is come. BengCall is builded to make you hustle free from maintaining your two-wheels vehicle with fast, reliable, and great service </p>
 
 ## 📓 Testing Documentation
 [Test Case For WebUI](https://docs.google.com/spreadsheets/d/1O6KXBNgfuOaJJmRbachmq_b3TQBppHi5DMILPnsZIZk/edit?pli=1#gid=1278518793)
