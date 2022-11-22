@@ -70,9 +70,6 @@
   [![LinkedIn](https://img.shields.io/badge/-Riovaldo%20Todoan%20Sihombing-white?style=for-the-badge&logo=linkedin&logoColor=blue)](https://www.linkedin.com/in/todoantodoan/)
   [![GitHub](https://img.shields.io/badge/-eltodoan-white?style=for-the-badge&logo=github&logoColor=black)](https://github.com/eltodoan)
 
-# Testing Documentation
-Testing documentaion for Manual Testing (https://docs.google.com/spreadsheets/d/1O6KXBNgfuOaJJmRbachmq_b3TQBppHi5DMILPnsZIZk/edit?pli=1#gid=1278518793)
-
 ## How to run the test
 To run the this project, you can either just run the `CucumberTestSuite` test runner class, or run `mvn verify` from terminal.
 
