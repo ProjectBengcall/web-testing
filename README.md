@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/ALTA-Bringeee-Group1/Bringeee-API">
+  <a href="">
     <img src="./bc.png" width="400" height="144">
   </a>
 
